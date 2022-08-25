@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link rel="stylesheet" href="todo.css" />
+    <style type="text/css">
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(28, 44, 88);
+        color: white;
+        text-align: center;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https:///fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <h1>Todo List</h1>
+
+        <div v-if="!isEditing">
+          <input type="text" v-model="todo" />
+          <input type="submit" value="add" @click="storeTodo" />
+        </div>
+        <div v-else>
+          <input type="text" v-model="todo" />
+          <input type="submit" value="update" @click="updateTodo" />
+        </div>
+
+        <ol>
+          <li v-for="(todo, index) in todos">
+            {{todo}}
+
+            <button @click="editTodo(index, todo)">Edit</button>
+            <button @click="deleteTodo(index)">Delete</button>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          isEditing: false,
+          selectedIndex: null,
+          todo: "",
+          todos: [],
+        },
+
+        methods: {
+          storeTodo() {
+            this.todos.push(this.todo);
+            this.todo = "";
+          },
+
+          editTodo(index, todo) {
+            this.todo = todo;
+            this.selectedIndex = index;
+            this.isEditing = true;
+          },
+
+          updateTodo() {
+            this.todos.splice(this.selectedIndex, 1, this.todo);
+            this.isEditing = false;
+          },
+
+          deleteTodo(index) {
+            this.todos.splice(index, 1);
+          },
+        },
+      });
+    </script>
+    <div class="footer">
+      <footer>
+        © 2022. Ocean travels <br />
+        Contact Number:- 0717894527 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Email:- &nbsp;<a href="mailto:oceantravels2022@gmail.com">Click Hear</a>
+        <br /><a href="https://Instagram.com/" target="_blank"> Instagram</a>
+        <a href="https://Facebook.com/" target="_blank"> Facebook </a>
+        <a href="https://twitter.com/" target="_blank">Twitter </a>
+      </footer>
+    </div>
+  </body>
+</html>

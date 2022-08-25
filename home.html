@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <style>
+      body {
+        background: #f2f2f2;
+        font-family: "Open Sans", sans-serif;
+        background-image: url("Home Image/Home.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .search {
+        width: 100%;
+        position: relative;
+        display: flex;
+      }
+
+      .searchTerm {
+        width: 100%;
+        border: 3px solid #00b4cc;
+        border-right: none;
+        padding: 5px;
+        height: 20px;
+        border-radius: 5px 0 0 5px;
+        outline: none;
+        color: #9dbfaf;
+      }
+
+      .searchTerm:focus {
+        color: #00b4cc;
+      }
+
+      .searchButton {
+        width: 40px;
+        height: 36px;
+        border: 1px solid #00b4cc;
+        background: #00b4cc;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      .wrap {
+        width: 30%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(28, 44, 88);
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="search">
+        <input
+          type="text"
+          class="searchTerm"
+          placeholder="What are you looking for?"
+        />
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <footer>
+        © 2022. Ocean travels <br />
+        Contact Number:- 0717894527 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Email:- &nbsp;<a href="mailto:oceantravels2022@gmail.com">Click Hear</a>
+        <br /><a href="https://Instagram.com/" target="_blank"> Instagram</a>
+        <a href="https://Facebook.com/" target="_blank"> Facebook </a>
+        <a href="https://twitter.com/" target="_blank">Twitter </a>
+      </footer>
+    </div>
+  </body>
+</html>

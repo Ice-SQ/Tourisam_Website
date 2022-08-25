@@ -1,0 +1,11 @@
+body {
+  background-image: url("Todo List Images/image.jpg");
+  background-size: cover;
+}
+
+h1 {
+  color: red;
+
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+}
